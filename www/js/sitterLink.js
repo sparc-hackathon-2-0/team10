@@ -2,10 +2,17 @@ var db = null;
 
 // Page Events
 $('#page-sitter-search').live('pageshow', function() {
+	resetBgHack();
 	getSitters();
 });
 
+$('#page-family-search').live('pageshow', function() {
+	resetBgHack();
+	getFamilies();
+});
+
 $('#page-sitter-profile').live('pageshow', function() {
+	resetBgHack();
 	populateSitterProfile();
 	//populateReviews();
 
@@ -20,26 +27,76 @@ $('#page-sitter-profile').live('pageshow', function() {
 	});
 });
 
+$('#page-family-profile').live('pageshow', function() {
+	resetBgHack();
+
+	populateFamilyProfile();
+	//populateReviews();
+
+	$("#profileReadReview").click(function() {
+		$('.profileReviewListing').fadeIn();		
+		$('.profileReviewForm').fadeOut();
+	});
+	
+	$("#profileLeaveReview").click(function() {
+		$('.profileReviewListing').fadeOut();
+		$('.profileReviewForm').fadeIn();
+	});
+});
+
+
 // Initialization Methods
 
 function init()
 {
-	try {
-		db = window.openDatabase("testdb", "1.0", "Test DB", 1000000);
-		db.transaction(bootstrapSchema, errorCB, successCB);
+	// try {
+	// 	db = window.openDatabase("testdb", "1.0", "Test DB", 1000000);
+	// 	db.transaction(bootstrapSchema, errorCB, successCB);
 
-	}
-	catch(err)
-	{
-		alert(err);
-	}
+	// }
+	// catch(err)
+	// {
+	// 	alert(err);
+	// }
 }
 
-// Utility Apps
+function resetBgHack()
+{
+	$('body').removeClass('bodyBg');
+}
+
+// Utility Functions
 
 function setActiveProfileID(id)
 {
 	sessionStorage.setItem('activeID', id);
+}
+
+function getStarRatings(n)
+{
+	var output = "";
+
+	if(!n)
+	{
+		output += "no rating";
+	}
+	else
+	{
+
+		for(var i=0; i<5; i++)
+		{
+			if(n > i)
+			{
+				output += '<img src="images/rateStarOn.png" class="rateStar" />';
+			}
+			else
+			{
+				output += '<img src="images/rateStarOff.png" class="rateStar" />';
+			}
+		}
+	}
+
+	return output;
 }
 
 
@@ -69,20 +126,22 @@ function queryError(err)
 
 function getSitters()
 {
-	if(db != null)
-	{
-		//db.transaction(sqlGetSitters, queryError);
-		wsGetSitters();
-	}
+	wsGetSitters();
 }
 
 function populateSitterProfile()
 {
-	if(db != null)
-	{
-		//db.transaction(sqlGetSitterProfile, queryError);
-		wsGetSittersProfile();
-	}
+	wsGetSittersProfile();
+}
+
+function getFamilies()
+{
+	wsGetFamilies();
+}
+
+function populateFamilyProfile()
+{
+	wsGetFamilyProfile();
 }
 
 function populateReviews()
@@ -107,7 +166,27 @@ function wsGetSitters()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.sitterResults').append('<li><a href="sitterprofile.html" onclick="setActiveProfileID(' + item.id + ');"><div class="leftCol"><h1>' + item.firstname + '</h1><h2>Location, ST</h2></div><div class="rightCol"><div class="previewRating"><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarHalf.png" class="rateStar" /><img src="images/rateStarOff.png" class="rateStar" /></div></div><div class="clearer"></div></a></li>');
+				$('.sitterResults').append('<li><a href="sitterprofile.html" onclick="setActiveProfileID(' + item.id + ');"><div class="leftCol"><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2></div><div class="rightCol"><div class="previewRating">' + getStarRatings(item.rating) + '</div></div><div class="clearer"></div></a></li>');
+			});
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
+
+function wsGetFamilies()
+{
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/family.php',
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			$.each(data, function(i, item) {
+				$('.familiesResults').append('<li><a href="familyprofile.html" onclick="setActiveProfileID(' + item.id + ');"><div class="leftCol"><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2></div><div class="rightCol"><div class="previewRating">' + getStarRatings(item.rating) + '</div></div><div class="clearer"></div></a></li>');
 			});
 		},
 		error: function(a, textStatus){
@@ -128,9 +207,32 @@ function wsGetSittersProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating"><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarHalf.png" class="rateStar" /><img src="images/rateStarOff.png" class="rateStar" /></div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+				$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
 
-				$('.profileBio').html('<p>Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis.</p>');
+				$('.profileBio').html('<p>' + item.description + '</p>');
+			});
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
+function wsGetFamilyProfile()
+{
+	var id = sessionStorage.getItem('activeID');
+
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/family.php?id=' + id,
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			$.each(data, function(i, item) {
+				$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+
+				$('.profileBio').html('<p>' + item.description + '</p>');
 			});
 		},
 		error: function(a, textStatus){

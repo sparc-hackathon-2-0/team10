@@ -40,15 +40,34 @@ h3 {
 
 
 
+/* ----------------------------------------------------------------------------- INITIAL ----------------- */
+.initialParent {
+	height: 50%;
+}
+
+.initialSitter {
+	height: 50%;	
+}
+
+
+
 /* ----------------------------------------------------------------------------- HEADER ----------------- */
 .ui-header {
 	height: 40px;
-	padding: 0 15px;
+	padding: 0;
 	border-top: none;
 	border-bottom: 1px solid #b65b01;
 	
 	background: -moz-linear-gradient(top,  #ffa144 0%, #e07306 100%); /* FF3.6+ */
 	background: -webkit-linear-gradient(top,  #ffa144 0%,#e07306 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.headerLogo {
+	height: 25px;
+	position: absolute;
+	left: 50%;
+	top: 6px;
+	margin-left: -55px;	
 }
 
 .ui-header .leftCol {
@@ -77,6 +96,7 @@ h3 {
 	text-indent: 0;
 	color: #fff;
 	text-shadow: none;
+	margin-left: 15px;
 }
 
 #btnHeaderMessages {
@@ -87,6 +107,7 @@ h3 {
 #btnHeaderProfile {
 	background: url(../images/iconProfile.png) 50% 50% no-repeat;
 	margin-left: 11px;
+	margin-right: 15px;
 }
 
 .ui-header h1 {
@@ -216,6 +237,8 @@ a.btnGo {
 .profileActions {
 	margin: 0 0 15px;
 	height: 35px;
+	border-radius: 0 0 4px 4px;
+	overflow: hidden;
 
 	background: -moz-linear-gradient(top,  #2cb9e0 0%, #009bd8 100%); /* FF3.6+ */
 	background: -webkit-linear-gradient(top,  #2cb9e0 0%,#009bd8 100%); /* Chrome10+,Safari5.1+ */
@@ -256,6 +279,24 @@ a.btnGo {
 }
 
 
+.profileReviewToggle {
+	display: inline-block;
+	text-align: center;
+	width: 50%;
+	float: left;
+	color: #e17307 !important;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 12px;
+	margin: 0 0 15px;
+	padding: 0 0 7px;
+}
+
+.profileReviewToggleActive {
+	color: #000 !important;	
+	background: url(../images/downArrow.png) 50% 100% no-repeat;
+}
+
 .profileReviews {
 	border-top: 1px solid #ddd;	
 	padding: 15px 0;
@@ -265,6 +306,16 @@ a.btnGo {
 
 .profileReviews h2 {
 	font-size: 20px;	
+}
+
+.profileReviewContent {
+	padding: 30px 15px 15px;
+	margin: 0 -15px;
+	border-bottom: 1px dashed #ddd;	
+}
+
+.profileReviewContent:nth-child(odd) {
+	background: #efefef;	
 }
 
 .profileReviewContent h3 {
@@ -289,7 +340,6 @@ a.btnGo {
 
 .profileReviewListing {
 	position: relative;
-	top: 0;
 	left: 0;	
 	display: none;
 }
@@ -297,6 +347,22 @@ a.btnGo {
 .profileReviewForm {
 	position: relative;
 	left: 0;
-	top: 0;	
 	display: none;
+}
+
+
+.rateStarLabel {
+	white-space: nowrap;	
+}
+
+.rateStarLabel .rateStar {
+	height: 15px;	
+}
+
+.reviewCommentLabel {
+	display: block !important;	
+}
+
+.reviewCommentInput {
+	width: 100% !important;	
 }
