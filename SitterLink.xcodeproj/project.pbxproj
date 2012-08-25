@@ -37,7 +37,9 @@
 		15C7D93A15E9196900AF4AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D93915E9196900AF4AFF /* AppDelegate.m */; };
 		15C7D93D15E9196900AF4AFF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D93C15E9196900AF4AFF /* MainViewController.m */; };
 		15C7D93F15E9196900AF4AFF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C7D93E15E9196900AF4AFF /* MainViewController.xib */; };
-		15C7D94915E919B800AF4AFF /* www in Resources */ = {isa = PBXBuildFile; fileRef = 15C7D94815E919B800AF4AFF /* www */; };
+		15C7D95015E9244500AF4AFF /* www in Resources */ = {isa = PBXBuildFile; fileRef = 15C7D94F15E9244500AF4AFF /* www */; };
+		15C7D95315E924A600AF4AFF /* PGSQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */; };
+		15C7D95515E924ED00AF4AFF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +80,10 @@
 		15C7D93E15E9196900AF4AFF /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainViewController.xib; path = Classes/MainViewController.xib; sourceTree = "<group>"; };
 		15C7D94115E9196900AF4AFF /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		15C7D94215E9196900AF4AFF /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
-		15C7D94815E919B800AF4AFF /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
+		15C7D94F15E9244500AF4AFF /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
+		15C7D95115E924A600AF4AFF /* PGSQLitePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGSQLitePlugin.h; path = www/Plugins/PGSQLitePlugin.h; sourceTree = "<group>"; };
+		15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLitePlugin.m; path = www/Plugins/PGSQLitePlugin.m; sourceTree = "<group>"; };
+		15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15C7D95515E924ED00AF4AFF /* libsqlite3.dylib in Frameworks */,
 				15C7D8F215E9196900AF4AFF /* Foundation.framework in Frameworks */,
 				15C7D8F415E9196900AF4AFF /* UIKit.framework in Frameworks */,
 				15C7D8F615E9196900AF4AFF /* CoreGraphics.framework in Frameworks */,
@@ -116,6 +122,7 @@
 		15C7D8DF15E9196800AF4AFF = {
 			isa = PBXGroup;
 			children = (
+				15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */,
 				15C7D90B15E9196900AF4AFF /* SitterLink */,
 				15C7D8F015E9196900AF4AFF /* Frameworks */,
 				15C7D8EE15E9196900AF4AFF /* Products */,
@@ -153,7 +160,7 @@
 		15C7D90B15E9196900AF4AFF /* SitterLink */ = {
 			isa = PBXGroup;
 			children = (
-				15C7D94815E919B800AF4AFF /* www */,
+				15C7D94F15E9244500AF4AFF /* www */,
 				15C7D91415E9196900AF4AFF /* Cordova.framework */,
 				15C7D91615E9196900AF4AFF /* Resources */,
 				15C7D93715E9196900AF4AFF /* Classes */,
@@ -256,6 +263,8 @@
 		15C7D94015E9196900AF4AFF /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
+				15C7D95115E924A600AF4AFF /* PGSQLitePlugin.h */,
+				15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */,
 				15C7D94115E9196900AF4AFF /* README */,
 			);
 			name = Plugins;
@@ -331,7 +340,7 @@
 				15C7D93415E9196900AF4AFF /* Capture.bundle in Resources */,
 				15C7D93615E9196900AF4AFF /* Cordova.plist in Resources */,
 				15C7D93F15E9196900AF4AFF /* MainViewController.xib in Resources */,
-				15C7D94915E919B800AF4AFF /* www in Resources */,
+				15C7D95015E9244500AF4AFF /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,6 +370,7 @@
 				15C7D91215E9196900AF4AFF /* main.m in Sources */,
 				15C7D93A15E9196900AF4AFF /* AppDelegate.m in Sources */,
 				15C7D93D15E9196900AF4AFF /* MainViewController.m in Sources */,
+				15C7D95315E924A600AF4AFF /* PGSQLitePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +557,7 @@
 				15C7D94715E9196900AF4AFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
