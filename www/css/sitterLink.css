@@ -42,12 +42,18 @@ h3 {
 
 /* ----------------------------------------------------------------------------- INITIAL ----------------- */
 .indexBg .ui-page {
-	background: -moz-linear-gradient(top,  #dddddd 24%, #c4c4c4 83%); /* FF3.6+ */
-	background: -webkit-linear-gradient(top,  #dddddd 24%,#c4c4c4 83%); /* Chrome10+,Safari5.1+ */
+	background: -moz-linear-gradient(top,  #ffa144 0%, #e07306 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #ffa144 0%,#e07306 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .initialWrapper {
 	margin: -15px;
+}
+
+.initialWrapper a {
+	text-decoration: none;	
+	color: #fff !important;
+	text-shadow: 1px 1px 0 #444;
 }
 
 .initialParent {
@@ -58,7 +64,7 @@ h3 {
 
 .initialParent .initialIcon {
 	height: 100px;
-	margin: 0 auto 13px;	
+	margin: 0 auto 7px;	
 }
 
 .initialSitter {
@@ -69,7 +75,17 @@ h3 {
 
 .initialSitter .initialIcon {
 	height: 100px;
-	margin: 0 auto 13px;
+	margin: 0 auto 7px;
+}
+
+.initialLogin {
+	text-align: center;	
+	padding: 15px 0 0;
+	border-top: 1px dashed #fff;
+}
+
+.initialLogin a {
+	color: #f6c594 !important;	
 }
 
 

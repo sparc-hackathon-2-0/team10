@@ -1,6 +1,37 @@
 var db = null;
 
 // Page Events
+
+$('#page-register').live('pageshow', function() {
+	$('#formRegister').submit(function() {
+
+		alert('starting call');
+
+		var email = $('#email').val();
+		var pass = $('#password').val();
+		var utype = sessionStorage.getItem('userType');
+
+
+		$.ajax({
+			url: 'http://hackathon.bluekeylabs.com/profile.php',
+			dataType: 'jsonp',
+			jsonp: 'jsoncallback',
+			type: 'POST',
+			data: "email="+$('#email').val()+"&pass="+$('#password').val()+"&utype="+sessionStorage.getItem('userType'),
+			timeout: 5000,
+			success: function(data, status)
+			{
+				alert(data[0]);
+			},
+			error: function(a, textStatus){
+				alert(textStatus);
+			}
+		});
+
+		return false;
+	});
+});
+
 $('#page-sitter-search').live('pageshow', function() {
 	resetBgHack();
 	getSitters();
@@ -19,7 +50,7 @@ $('#page-job-search').live('pageshow', function() {
 $('#page-sitter-profile').live('pageshow', function() {
 	resetBgHack();
 	populateSitterProfile();
-	//populateReviews();
+	populateSitterReviews();
 
 	$("#profileReadReview").click(function() {
 		$('.profileReviewListing').fadeIn();		
@@ -67,7 +98,7 @@ function init()
 
 function resetBgHack()
 {
-	$('body').removeClass('bodyBg');
+	$('body').removeClass('indexBg');
 }
 
 // Utility Functions
@@ -154,12 +185,9 @@ function populateFamilyProfile()
 	wsGetFamilyProfile();
 }
 
-function populateReviews()
+function populateSitterReviews()
 {
-	if(db != null)
-	{
-		db.transaction(sqlGetSitterReviews, queryError);
-	}
+	wsGetSittersReviews();
 }
 
 /*
@@ -178,6 +206,33 @@ function wsGetSitters()
 			$.each(data, function(i, item) {
 				$('.sitterResults').append('<li><a href="sitterprofile.html" onclick="setActiveProfileID(' + item.id + ');"><div class="leftCol"><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2></div><div class="rightCol"><div class="previewRating">' + getStarRatings(item.rating) + '</div></div><div class="clearer"></div></a></li>');
 			});
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
+function wsGetSittersReviews()
+{
+	var id = sessionStorage.getItem('activeID');
+
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/review.php?id=' + id,
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			$.each(data, function(i, item) {
+				$('.profileReviewListing').append('<div class="profileReviewContent"><div class="reviewRating">' + getStarRatings(item.rating) + '</div><div class="clearer"></div><p>' + item.description + '</p></div>');
+			});
+
+			if(data.length == 0)
+			{
+				$('.profileReviewListing').append('<div class="profileReviewContent"><p style="test-align: center;">no reviews</p></div>');
+			}
+
 		},
 		error: function(a, textStatus){
 			alert(textStatus);

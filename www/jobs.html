@@ -6,8 +6,9 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 	<meta charset="utf-8">
 
+
 	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
-	<link rel="stylesheet" href="css/sitterLink.css" />		
+	<link rel="stylesheet" href="css/sitterLink.css" />	
 	
 	<!-- TODO: determine why and what
 	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
@@ -16,7 +17,6 @@
 	<script type="text/javascript" charset="utf-8" src="js/cordova-1.9.0.js"></script>
 
 	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
-	<script type="text/javascript" src="js/jquery.jsonp-2.4.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
     <script type="text/javascript" src="js/sitterlink.js"></script>
 
@@ -31,32 +31,38 @@
 		}
     </script>
   </head>
-  <body class="indexBg">
-  	<div id="page-register" data-role="page">
+  <body>
+  	<div id="page-job-search" data-role="page">
 
-		
-		<div data-role="content">
-
-			<div class="formErrors">
+		<div data-role="header" data-position="fixed">
+			<div class="leftCol">
+			
 			</div>
 			
-			<form id="formRegister">
+			<div class="rightCol">
 			
-				<label for="basic">Email:</label>
-	    		<input type="email" name="email" id="email" value=""  />
-				
-				<label for="basic">Password:</label>
-	    		<input type="password" name="password" id="password" value=""  />
-				
-				<label for="basic">Confirm Password:</label>
-	    		<input type="password" name="password_confirm" id="password_confirm" value=""  />
-				
-				<input type="submit" value="Register" />
+				<a href="" class="btnHeader" id="btnHeaderMessages">Messages</a>
+				<a href="" class="btnHeader" id="btnHeaderProfile">Profile</a>
 			
-			</form>
+			</div>
+			
+			<div class="clearer">
+			</div>
+			
+			<img src="images/headerLogo.png" class="headerLogo" />
+		</div><!-- /header -->
+
+		<div data-role="content">	
+			
+	        <ul class="previewList jobResults">
+
+	        </ul>
 	        
 		</div><!-- /content -->
 
+		<div data-role="footer">
+			<h4>Page Footer</h4>
+		</div><!-- /footer -->
 	    
 	</div><!-- /page -->
   </body>
