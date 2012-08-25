@@ -10,7 +10,7 @@ p, td, li {
 }
 
 a, a:visited {
-	
+	color: #e17307;
 }
 
 a:hover, a:visited:hover {
@@ -22,19 +22,15 @@ img {
 }
 
 h1 {
-	
+	margin: 0 0 5px;
 }
 
 h2 {
-	
+	margin: 0 0 5px;
 }
 
 h3 {
-	
-}
-
-h4 {
-	
+	margin: 0 0 5px;
 }
 
 /* ----------------------------------------------------------------------------- GENERAL ----------------- */
@@ -47,6 +43,12 @@ h4 {
 /* ----------------------------------------------------------------------------- HEADER ----------------- */
 .ui-header {
 	height: 40px;
+	padding: 0 15px;
+	border-top: none;
+	border-bottom: 1px solid #b65b01;
+	
+	background: -moz-linear-gradient(top,  #ffa144 0%, #e07306 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #ffa144 0%,#e07306 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .ui-header .leftCol {
@@ -61,15 +63,37 @@ h4 {
 }
 
 .btnHeader {
-	display: inline-block;	
+	display: inline-block;
+	text-indent: -9999px;
+	overflow: hidden;	
+	height: 25px;
+	line-height: 25px;
+	min-width: 25px;
+	text-align: left;
+	margin: 6px 0 0;
+}
+
+#btnHeaderBack {
+	text-indent: 0;
+	color: #fff;
+	text-shadow: none;
 }
 
 #btnHeaderMessages {
-	
+	background: url(../images/iconMessages.png) 50% 50% no-repeat;
+	width: 32px;
 }
 
 #btnHeaderProfile {
-	
+	background: url(../images/iconProfile.png) 50% 50% no-repeat;
+	margin-left: 11px;
+}
+
+.ui-header h1 {
+	font-size: 12px;
+	margin: 0;
+	height: 40px;
+	line-height: 40px;	
 }
 
 
@@ -136,7 +160,143 @@ a.btnGo {
 	height: 25px;
 	display: inline-block;
 	background: #ddd;
-	text-indent: -9999px;	
+	text-indent: -9999px;
+	overflow: hidden;	
 }
 
 /* ----------------------------------------------------------------------------- PROFILE PAGE ----------------- */
+.profileTop {
+	background: #eaeaea;	
+	padding: 15px;
+	margin: 15px 0 0;
+	line-height: 16px;
+}
+
+.profileTop p {
+	font-size: 14px;
+	margin: 0;	
+}
+
+.profilePic {
+	width: 33%;
+	border: 5px solid #fff;
+	box-shadow: 0 0 3px #aaa;
+	float: left;
+	margin: -30px 15px 0 -15px;	
+}
+
+.profileTop h1 {
+	font-size: 22px;
+	line-height: 24px;
+	margin: 0 0 5px;	
+}
+
+.profileTop h2 {
+	font-size: 16px;
+	line-height: 18px;
+	color: #999;
+	margin: 0;	
+}
+
+.profileTop a {
+	text-decoration: none;	
+}
+
+.profileRating .rateStar {
+	height: 15px;	
+}
+
+.profileTop .profileQuote {
+	font-style: italic;
+	color: #777;	
+	margin: 19px 0 0;
+	line-height: 18px;
+}
+
+.profileActions {
+	margin: 0 0 15px;
+	height: 35px;
+
+	background: -moz-linear-gradient(top,  #2cb9e0 0%, #009bd8 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #2cb9e0 0%,#009bd8 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.profileActions ul {
+	padding: 0;
+	margin: 0;
+	list-style: none;	
+}
+
+.profileActions li {
+	width: 50%;
+	float: left;
+	height: 35px;	
+	line-height: 35px;
+	text-align: center;
+	font-size: 12px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #fff;
+	text-shadow: 1px 1px 0 #777;
+}
+
+.profileActions .profileAction {
+	display: block;
+	border-right: 1px solid #87d7ef;	
+}
+
+.profileActions a {
+	color: #fff !important;
+	text-decoration: none !important;	
+}
+
+
+.profileBio {
+	line-height: 20px;	
+}
+
+
+.profileReviews {
+	border-top: 1px solid #ddd;	
+	padding: 15px 0;
+	line-height: 20px;
+	position: relative;
+}
+
+.profileReviews h2 {
+	font-size: 20px;	
+}
+
+.profileReviewContent h3 {
+	float: left;	
+	font-size: 16px;
+}
+
+.profileReviewContent p {
+	margin: 0 0 15px;	
+}
+
+.reviewRating {
+	width: 125px;
+	float: right;
+	text-align: right;	
+}
+
+.reviewRating .rateStar {
+	height: 15px;	
+}
+
+
+.profileReviewListing {
+	position: relative;
+	top: 0;
+	left: 0;	
+	display: none;
+}
+
+.profileReviewForm {
+	position: relative;
+	left: 0;
+	top: 0;	
+	display: none;
+}

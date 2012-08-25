@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/sitterLink.css" />
 <script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+<script src="js/general.js"></script>
 </head>
 
 <body>
@@ -17,12 +18,12 @@
 	<div data-role="header">
 		
 		<div class="leftCol">
-			back
+			<a href="javascript:history.back();" class="btnHeader" id="btnHeaderBack">Back</a>
 		</div>
 		
 		<div class="rightCol">
 		
-			<a href="" class="btnHeader" id="btnheaderMessages">Messages</a>
+			<a href="" class="btnHeader" id="btnHeaderMessages">Messages</a>
 			<a href="" class="btnHeader" id="btnHeaderProfile">Profile</a>
 		
 		</div>
@@ -34,7 +35,127 @@
 
 	<div data-role="content">	
 		
-        
+        <div class="profileTop">
+				
+			<img src="images/tempProfilePic.png" class="profilePic" />
+			
+			<h1>Sally Smith</h1>
+			<h2>Location, ST</h2>
+			<a href="#reviews"><div class="profileRating">
+				 <img src="images/rateStarOn.png" class="rateStar" />
+				 <img src="images/rateStarOn.png" class="rateStar" />
+				 <img src="images/rateStarOn.png" class="rateStar" />
+				 <img src="images/rateStarHalf.png" class="rateStar" />
+				 <img src="images/rateStarOff.png" class="rateStar" />
+			</div></a><!-- /previewRating -->
+			
+			<div class="clearer">
+			</div>
+			<p class="profileQuote">Assum modo eodem facit typi nam. Processus adipiscing nulla consuetudium iusto velit. Decima dynamicus magna id dolore ea. Assum modo eodem facit typi.</p>
+		
+		</div><!-- /profileTop -->
+		
+		<div class="profileActions">
+			<ul>
+				<li><a href="" class="profileAction" id="profileActionMessage">Message</a></li>
+				<li>Available in 2 Days</li>
+			</ul>
+			
+		</div>
+		
+		<div class="profileBio">
+			<p>Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis.</p>
+		</div><!-- /profileBio -->
+		
+		<a name="reviews"></a><div class="profileReviews">
+		
+			<a href="" class="profileReviewToggle" id="profileReadReview">Read Reviews</a>
+			<a href="" class="profileReviewToggle" id="profileLeaveReview">Leave a Review</a>
+		
+			<div class="profileReviewListing">
+			
+				<h2>Reviews</h2>
+				
+				<div class="profileReviewContent">
+					<h3>Review Title</h3>
+					<div class="reviewRating">
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarHalf.png" class="rateStar" />
+						 <img src="images/rateStarOff.png" class="rateStar" />
+					</div>
+					<div class="clearer">
+					</div>
+					<p>Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc.</p>
+				</div><!-- /profileReviewContent -->
+				
+				<div class="profileReviewContent">
+					<h3>Review Title is much longer than the other ones are</h3>
+					<div class="reviewRating">
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarHalf.png" class="rateStar" />
+						 <img src="images/rateStarOff.png" class="rateStar" />
+					</div>
+					<div class="clearer">
+					</div>
+					<p>Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc.</p>
+				</div><!-- /profileReviewContent -->
+				
+				<div class="profileReviewContent">
+					<h3>Review Title</h3>
+					<div class="reviewRating">
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarHalf.png" class="rateStar" />
+						 <img src="images/rateStarOff.png" class="rateStar" />
+					</div>
+					<div class="clearer">
+					</div>
+					<p>Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc.</p>
+				</div><!-- /profileReviewContent -->
+				
+				<div class="profileReviewContent">
+					<h3>Review Title</h3>
+					<div class="reviewRating">
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarHalf.png" class="rateStar" />
+						 <img src="images/rateStarOff.png" class="rateStar" />
+					</div>
+					<div class="clearer">
+					</div>
+					<p>Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc.</p>
+				</div><!-- /profileReviewContent -->
+				
+				<div class="profileReviewContent">
+					<h3>Review Title</h3>
+					<div class="reviewRating">
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarOn.png" class="rateStar" />
+						 <img src="images/rateStarHalf.png" class="rateStar" />
+						 <img src="images/rateStarOff.png" class="rateStar" />
+					</div>
+					<div class="clearer">
+					</div>
+					<p>Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc. Clari amet minim aliquip illum blandit. Dignissim modo in dynamicus usus aliquip. Iusto zzril dynamicus quis humanitatis nunc.</p>
+				</div><!-- /profileReviewContent -->
+				
+			</div><!-- /profileReviewListing -->
+			
+			<div class="profileReviewForm">
+				Review Form
+			</div><!-- /profileReviewForm -->
+			
+			<div class="clearer">
+			</div>
+			
+		</div><!-- /orofileReviews -->
         
 	</div><!-- /content -->
 
