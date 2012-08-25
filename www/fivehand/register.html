@@ -11,54 +11,30 @@
 <script src="js/general.js"></script>
 </head>
 
-<body>
+<body class="indexBg">
 
 <div data-role="page">
 
-	<div data-role="header" data-position="fixed">
+	<div data-role="content">
+	
+		<div class="registerDiv">	
 		
-		<div class="leftCol">
+			<form>
 			
-		</div>
-		
-		<div class="rightCol">
-		
+				<label for="name">Email:</label>
+				<input type="email" name="name" id="name" value=""  />
+				
+				<label for="password">Password:</label>
+				<input type="password" name="password" id="password" value=""  />
+				
+				<label for="passwordConfirm">Confirm Password:</label>
+				<input type="password" name="passwordConfirm" id="passwordConfirm" value=""  />
+				
+				<input type="submit" value="Register" />
 			
-		
-		</div>
-		
-		<div class="clearer">
-		</div>
-		
-		<img src="images/headerLogo.png" class="headerLogo" />
-		
-	</div><!-- /header -->
-
-	<div data-role="content">	
-		
-		<form>
-		
-			<fieldset data-role="controlgroup">
-				<legend>I am a:</legend>
-					<input type="radio" name="radio-choice" id="radio-choice-3" value="choice-3"  />
-					<label for="radio-choice-3">Parent</label>
+			</form>
 			
-					<input type="radio" name="radio-choice" id="radio-choice-4" value="choice-4"  />
-					<label for="radio-choice-4">Sitter</label>
-			</fieldset>
-		
-			<label for="basic">Name:</label>
-    		<input type="text" name="name" id="basic" value=""  />
-			
-			<label for="basic">Password:</label>
-    		<input type="text" name="name" id="basic" value=""  />
-			
-			<label for="basic">Confirm Password:</label>
-    		<input type="text" name="name" id="basic" value=""  />
-			
-			<input type="submit" value="Register" />
-		
-		</form>
+		</div><!-- /registerDiv -->
         
 	</div><!-- /content -->
     
