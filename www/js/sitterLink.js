@@ -22,7 +22,14 @@ $('#page-register').live('pageshow', function() {
 				sessionStorage.setItem('auth', 1);
 				sessionStorage.setItem('userid', data.id);
 
-				$.mobile.changePage("profile-edit.html");
+				if(utype == 'F')
+				{
+					$.mobile.changePage("search-families.html");
+				}
+				else
+				{
+					$.mobile.changePage("search-sitters.html")
+				}
 				
 			},
 			error: function(a, textStatus){
@@ -35,26 +42,30 @@ $('#page-register').live('pageshow', function() {
 });
 
 $('#page-profile-edit').live('pageshow', function() {
-	$('#dbg').html(sessionStorage.getItem('userid'));
+	$('#dbg').html(sessionStorage.getItem('userid') + "<a href='search-families.html'>families</a><a href='search-sitters.html'>sitters</a>");
 });
 
 $('#page-sitter-search').live('pageshow', function() {
 	resetBgHack();
+	initMessages();
 	getSitters();
 });
 
 $('#page-family-search').live('pageshow', function() {
 	resetBgHack();
+	initMessages();
 	getFamilies();
 });
 
 $('#page-job-search').live('pageshow', function() {
 	resetBgHack();
+	initMessages();
 	getJobs();
 });
 
 $('#page-sitter-profile').live('pageshow', function() {
 	resetBgHack();
+	initMessages();
 	populateSitterProfile();
 	populateSitterReviews();
 
@@ -71,7 +82,7 @@ $('#page-sitter-profile').live('pageshow', function() {
 
 $('#page-family-profile').live('pageshow', function() {
 	resetBgHack();
-
+	initMessages();
 	populateFamilyProfile();
 	//populateReviews();
 
@@ -105,6 +116,11 @@ function init()
 function resetBgHack()
 {
 	$('body').removeClass('indexBg');
+}
+
+function initMessages()
+{
+	wsGetMessageCount();
 }
 
 // Utility Functions
@@ -246,6 +262,27 @@ function wsGetSittersReviews()
 	})
 }
 
+function wsGetMessageCount()
+{
+	var id = sessionStorage.getItem('userid');
+
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/message.php?profile=' + id,
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			var message_count = data.length;
+
+			$('.badge').html(message_count);
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
 function wsGetJobs()
 {
 	$.ajax({
@@ -297,7 +334,7 @@ function wsGetSittersProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
 
 				$('.profileBio').html('<p>' + item.description + '</p>');
 			});
@@ -320,7 +357,7 @@ function wsGetFamilyProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
 
 				$('.profileBio').html('<p>' + item.description + '</p>');
 			});
@@ -360,7 +397,7 @@ function domPopulateSitterProfile(tx, results)
 
 	try {
 
-		$('.profileTop').html('<img src="images/tempProfilePic.png" class="profilePic" /><h1>' + results.rows.item(0).name + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating"><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarHalf.png" class="rateStar" /><img src="images/rateStarOff.png" class="rateStar" /></div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+		$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + results.rows.item(0).name + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating"><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarOn.png" class="rateStar" /><img src="images/rateStarHalf.png" class="rateStar" /><img src="images/rateStarOff.png" class="rateStar" /></div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
 
 		$('.profileBio').html('<p>Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis. Id iriure hendrerit legentis claritas est. Etiam eodem lius esse fiant tempor. Nostrud tempor tempor iis hendrerit iis.</p>');
 	}

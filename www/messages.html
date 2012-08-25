@@ -6,6 +6,7 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 	<meta charset="utf-8">
 
+
 	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
 	<link rel="stylesheet" href="css/sitterLink.css" />	
 	
@@ -31,10 +32,9 @@
     </script>
   </head>
   <body>
-  	<div id="page-sitter-profile" data-role="page">
+  	<div id="page-sitter-search" data-role="page">
 
 		<div data-role="header" data-position="fixed">
-		
 			<div class="leftCol">
 				<a href="javascript:history.back();" class="btnHeader" id="btnHeaderBack">Back</a>
 			</div>
@@ -50,47 +50,15 @@
 			</div>
 			
 			<img src="images/headerLogo.png" class="headerLogo" />
-			
 		</div><!-- /header -->
 
-	<div data-role="content">	
-		
-        <div class="profileTop">
-		
-		</div><!-- /profileTop -->
-		
-		<div class="profileActions">
-			<ul>
-				<li><a href="" class="profileAction" id="profileActionMessage">Message</a></li>
-				<li>Available in 2 Days</li>
-			</ul>
+		<div data-role="content">	
 			
-		</div>
-		
-		<div class="profileBio">
-			
-		</div><!-- /profileBio -->
-		
-		<a name="reviews"></a><div class="profileReviews">
-		
-			<a href="#" class="profileReviewToggle" id="profileReadReview">Read Reviews</a>
-			<a href="#" class="profileReviewToggle" id="profileLeaveReview">Leave a Review</a>
-		
-			<div class="profileReviewListing">
-			
-				
-			</div><!-- /profileReviewListing -->
-			
-			<div class="profileReviewForm">
-				Review Form
-			</div><!-- /profileReviewForm -->
-			
-			<div class="clearer">
-			</div>
-			
-		</div><!-- /orofileReviews -->
-        
-	</div><!-- /content -->
+	        <ul class="previewList sitterResults">
+
+	        </ul>
+	        
+		</div><!-- /content -->
 
 	    
 	</div><!-- /page -->
