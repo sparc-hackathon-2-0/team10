@@ -160,9 +160,16 @@ h3 {
 
 #btnHeaderBack {
 	text-indent: 0;
-	color: #fff;
+	color: #e5790f;
 	text-shadow: none;
 	margin-left: 15px;
+	background: url(../images/iconBackBg.png) 0 50% no-repeat;
+	border-radius: 12px;
+	text-transform: uppercase;
+	font-size: 10px;
+	text-shadow: none;
+	padding: 0 7px 0 17px;
+	text-decoration: none;
 }
 
 #btnHeaderMessages {
@@ -289,8 +296,8 @@ a.btnGo {
 	width: 33%;
 	border: 5px solid #fff;
 	box-shadow: 0 0 3px #aaa;
-	float: left;
 	margin: -30px 15px 0 -25px;	
+	float: left;
 }
 
 .profileTop h1 {
@@ -451,5 +458,18 @@ a.btnGo {
 }
 
 .reviewCommentInput {
+	width: 100% !important;	
+}
+
+
+
+
+
+/* ----------------------------------------------------------------------------- PROFILE PAGE ----------------- */
+.editProfileLongLabel {
+	display: block !important;	
+}
+
+.editProfileLongText {
 	width: 100% !important;	
 }
