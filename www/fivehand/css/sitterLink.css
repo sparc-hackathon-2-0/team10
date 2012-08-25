@@ -90,6 +90,29 @@ h3 {
 
 
 
+
+/* ----------------------------------------------------------------------------- LOGIN ----------------- */
+.registerDiv .ui-checkbox-on .ui-icon, .registerDiv .ui-radio-on .ui-icon {
+	background: #ffa144;	
+}
+
+.registerDiv .ui-submit {
+	margin-top: 20px;	
+	text-transform: uppercase;
+	color: #fff !important;
+	text-shadow: 1px 1px 0 #777;
+	box-shadow: none;
+	background: -moz-linear-gradient(top,  #cecece 0%, #afafaf 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #cecece 0%,#afafaf 100%); /* Chrome10+,Safari5.1+ */
+}
+
+.registerDiv .ui-btn-down-c, .registerDiv .ui-btn-active {
+	background: #afafaf;
+}
+
+
+
+
 /* ----------------------------------------------------------------------------- HEADER ----------------- */
 .ui-header {
 	height: 40px;
