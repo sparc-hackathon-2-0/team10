@@ -3,7 +3,7 @@
   <head>
   <title></title>
   
- 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 	<meta charset="utf-8">
 
 	<link rel="stylesheet" href="css/sitterLink.css" />	
@@ -19,10 +19,12 @@
     <script type="text/javascript" src="js/sitterLink.js"></script>
 
     <script type="text/javascript">
-        $(function() {
-          onDeviceReady();
-        });
 	
+		function onBodyLoad()
+		{
+			alert('test');
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
 
 		/* When this function is called, Cordova has been initialized and is ready to roll */
 		/* If you are supporting your own protocol, the var invokeString will contain any arguments to the app launch.
@@ -30,14 +32,34 @@
 		for more details -jm */
 		function onDeviceReady()
 		{
+			alert('test');
 			// do your thing!
 			addTempData();
 			loadSitters();
 		}
     </script>
   </head>
-  <body>
-  	<h1>Let's test some SQLLite Magic</h1>
-  	<a href="search.html">Search and testing database</a>
+  <body onload="onBodyLoad()">
+  	<div data-role="page">
+
+	<div data-role="header">
+		<h1>Available Sitters</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+        <ul class="previewList sittersResults">
+
+			
+			<li id="dbg"></li>
+        </ul>
+        
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4>Page Footer</h4>
+	</div><!-- /footer -->
+    
+</div><!-- /page -->
   </body>
 </html>
