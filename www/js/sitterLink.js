@@ -5,8 +5,6 @@ var db = null;
 $('#page-register').live('pageshow', function() {
 	$('#formRegister').submit(function() {
 
-		alert('starting call');
-
 		var email = $('#email').val();
 		var pass = $('#password').val();
 		var utype = sessionStorage.getItem('userType');
@@ -21,7 +19,11 @@ $('#page-register').live('pageshow', function() {
 			timeout: 5000,
 			success: function(data, status)
 			{
-				alert(data[0]);
+				sessionStorage.setItem('auth', 1);
+				sessionStorage.setItem('userid', data.id);
+
+				$.mobile.changePage("profile-edit.html");
+				
 			},
 			error: function(a, textStatus){
 				alert(textStatus);
@@ -30,6 +32,10 @@ $('#page-register').live('pageshow', function() {
 
 		return false;
 	});
+});
+
+$('#page-profile-edit').live('pageshow', function() {
+	$('#dbg').html(sessionStorage.getItem('userid'));
 });
 
 $('#page-sitter-search').live('pageshow', function() {
