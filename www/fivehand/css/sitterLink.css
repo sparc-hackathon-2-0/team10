@@ -41,12 +41,35 @@ h3 {
 
 
 /* ----------------------------------------------------------------------------- INITIAL ----------------- */
+.indexBg .ui-page {
+	background: -moz-linear-gradient(top,  #dddddd 24%, #c4c4c4 83%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #dddddd 24%,#c4c4c4 83%); /* Chrome10+,Safari5.1+ */
+}
+
+.initialWrapper {
+	margin: -15px;
+}
+
 .initialParent {
-	height: 50%;
+	padding: 25px 0;
+	text-align: center;
+	font-weight: bold;
+}
+
+.initialParent .initialIcon {
+	height: 100px;
+	margin: 0 auto 13px;	
 }
 
 .initialSitter {
-	height: 50%;	
+	padding: 25px 0;
+	text-align: center;	
+	font-weight: bold;
+}
+
+.initialSitter .initialIcon {
+	height: 100px;
+	margin: 0 auto 13px;
 }
 
 

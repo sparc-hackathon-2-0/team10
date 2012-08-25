@@ -11,20 +11,19 @@
 <script src="js/general.js"></script>
 </head>
 
-<body>
+<body class="indexBg">
 
 <div data-role="page">
 
 	<div data-role="header" data-position="fixed">
 		
 		<div class="leftCol">
-			<a href="javascript:history.back();" class="btnHeader" id="btnHeaderBack">Back</a>
+			
 		</div>
 		
 		<div class="rightCol">
 		
-			<a href="" class="btnHeader" id="btnHeaderMessages">Messages</a>
-			<a href="" class="btnHeader" id="btnHeaderProfile">Profile</a>
+			
 		
 		</div>
 		
@@ -37,19 +36,21 @@
 
 	<div data-role="content">	
 		
-        <div class="initialParent">
-			<img src="images/initialParent.png" class="initialIcon" />
-		</div><!-- /initialParent -->
+		<div class="initialWrapper">
 		
-        <div class="initialSitter">
-			<img src="images/initialSitter.png" class="initialIcon" />
-		</div><!-- /initialSitter -->
+			<div class="initialParent">
+				<img src="images/initialIconFamily.png" class="initialIcon" /><br />
+				I'm a parent
+			</div><!-- /initialParent -->
+			
+			<div class="initialSitter">
+				<img src="images/initialIconSitter.png" class="initialIcon" /><br />
+				I'm a sitter
+			</div><!-- /initialSitter -->
+			
+		</div><!-- /initialWrapper -->
         
 	</div><!-- /content -->
-
-	<div data-role="footer">
-		<h4>Page Footer</h4>
-	</div><!-- /footer -->
     
 </div><!-- /page -->
 
