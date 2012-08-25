@@ -1,0 +1,142 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.body {
+	
+}
+
+p, td, li {
+		
+}
+
+a, a:visited {
+	
+}
+
+a:hover, a:visited:hover {
+	
+}
+
+img {
+	border: none;	
+}
+
+h1 {
+	
+}
+
+h2 {
+	
+}
+
+h3 {
+	
+}
+
+h4 {
+	
+}
+
+/* ----------------------------------------------------------------------------- GENERAL ----------------- */
+.clearer {
+	clear: both;	
+}
+
+
+
+/* ----------------------------------------------------------------------------- HEADER ----------------- */
+.ui-header {
+	height: 40px;
+}
+
+.ui-header .leftCol {
+	width: 50%;
+	float: left;	
+}
+
+.ui-header .rightCol {
+	width: 50%;
+	float: right;
+	text-align: right;	
+}
+
+.btnHeader {
+	display: inline-block;	
+}
+
+#btnHeaderMessages {
+	
+}
+
+#btnHeaderProfile {
+	
+}
+
+
+
+/* ----------------------------------------------------------------------------- PREVIEW LISTS ----------------- */
+.previewList {
+	list-style: none;
+	margin: -15px;
+	padding: 0;	
+}
+
+.previewList li {
+	padding: 15px;
+	border-bottom: 1px dashed #ddd;	
+}
+
+.previewList li:nth-child(even) {
+	background: #efefef;	
+}
+
+.previewList li:last-child {
+	border-bottom: none;	
+}
+
+.previewList a {
+	text-decoration: none;	
+}
+
+.previewList .leftCol {
+	width: 50%;
+	float: left;
+}
+
+.previewList .rightCol {
+	width: 50%;
+	float: right;	
+}
+
+.previewList h1 {
+	font-size: 18px;
+	line-height: 20px;
+	margin: 0;	
+	color: #000;
+}
+
+.previewList h2 {
+	font-size: 12px;
+	line-height: 14px;
+	margin: 0;	
+	color: #999;
+}
+
+.previewRating {
+	text-align: right;
+	margin: 9px 0 0;
+}
+
+.previewRating .rateStar {
+	height: 15px;	
+}
+
+a.btnGo {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background: #ddd;
+	text-indent: -9999px;	
+}
+
+/* ----------------------------------------------------------------------------- PROFILE PAGE ----------------- */
