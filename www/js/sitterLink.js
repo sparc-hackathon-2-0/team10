@@ -11,6 +11,11 @@ $('#page-family-search').live('pageshow', function() {
 	getFamilies();
 });
 
+$('#page-job-search').live('pageshow', function() {
+	resetBgHack();
+	getJobs();
+});
+
 $('#page-sitter-profile').live('pageshow', function() {
 	resetBgHack();
 	populateSitterProfile();
@@ -139,6 +144,11 @@ function getFamilies()
 	wsGetFamilies();
 }
 
+function getJobs()
+{
+	wsGetJobs();
+}
+
 function populateFamilyProfile()
 {
 	wsGetFamilyProfile();
@@ -167,6 +177,25 @@ function wsGetSitters()
 		{
 			$.each(data, function(i, item) {
 				$('.sitterResults').append('<li><a href="sitterprofile.html" onclick="setActiveProfileID(' + item.id + ');"><div class="leftCol"><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2></div><div class="rightCol"><div class="previewRating">' + getStarRatings(item.rating) + '</div></div><div class="clearer"></div></a></li>');
+			});
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
+function wsGetJobs()
+{
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/job.php',
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			$.each(data, function(i, item) {
+				$('.jobResults').append('<li><a href="familyprofile.html" onclick="setActiveProfileID(' + item.family + ');"><div class="leftCol"><h1>' + item.familyname + '</h1><h2>' + item.city + ', ' + item.state + '</h2></div><div class="rightCol">' + item.sitwhen + '<br />' + item.sitstarttime + '-' + item.sitendtime + '</div><div class="clearer"></div></a></li>');
 			});
 		},
 		error: function(a, textStatus){
