@@ -67,12 +67,46 @@
 	function onDeviceReady()
 	{
 		// do your thing!
-		navigator.notification.alert("Cordova is working")
+		prepDatabase();
+	}
+
+	function prepDatabase()
+	{
+		var db = new PGSQLitePlugin('sitterlink', onOpen, onFail);
+	}
+
+	function bootstrapDatabase()
+	{
+		var query = '' +
+                'CREATE TABLE IF NOT EXISTS "test" (' +
+                'Id INTEGER PRIMARY KEY AUTOINCREMENT,' +
+                'name VARCHAR(100)' +
+                ');' + 
+                '';
+           db.executeSql(query, onCreateTable, onFail);
+
+	}
+
+	function onCreateTable()
+	{
+		console.log('table created successfully');
+	}
+
+	function onOpen()
+	{
+		console.log('database open.')
+
+	}
+
+	function onFail(e)
+	{
+		console.log('Database Error. Nothing to worry about. Just fix it.');
+		console.log(e);
 	}
     
     </script>
   </head>
   <body onload="onBodyLoad()">
-  	<h1>Let's test some SQLLite Magic
+  	<h1>Let's test some SQLLite Magic</h1>
   </body>
 </html>
