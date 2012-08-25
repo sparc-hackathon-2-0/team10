@@ -39,8 +39,7 @@
 		15C7D93F15E9196900AF4AFF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C7D93E15E9196900AF4AFF /* MainViewController.xib */; };
 		15C7D95315E924A600AF4AFF /* PGSQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */; };
 		15C7D95515E924ED00AF4AFF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */; };
-		15CEB41315E9290400EE4814 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 15CEB41215E9290400EE4814 /* www */; };
-		15CEB41615E9295300EE4814 /* PGSQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CEB41515E9295300EE4814 /* PGSQLitePlugin.m */; };
+		15CEB41815E92A3200EE4814 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 15CEB41715E92A3200EE4814 /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,9 +83,7 @@
 		15C7D95115E924A600AF4AFF /* PGSQLitePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PGSQLitePlugin.h; path = www/Plugins/PGSQLitePlugin.h; sourceTree = "<group>"; };
 		15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PGSQLitePlugin.m; path = www/Plugins/PGSQLitePlugin.m; sourceTree = "<group>"; };
 		15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		15CEB41215E9290400EE4814 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
-		15CEB41415E9295300EE4814 /* PGSQLitePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSQLitePlugin.h; sourceTree = "<group>"; };
-		15CEB41515E9295300EE4814 /* PGSQLitePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSQLitePlugin.m; sourceTree = "<group>"; };
+		15CEB41715E92A3200EE4814 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,7 +160,7 @@
 		15C7D90B15E9196900AF4AFF /* SitterLink */ = {
 			isa = PBXGroup;
 			children = (
-				15CEB41215E9290400EE4814 /* www */,
+				15CEB41715E92A3200EE4814 /* www */,
 				15C7D91415E9196900AF4AFF /* Cordova.framework */,
 				15C7D91615E9196900AF4AFF /* Resources */,
 				15C7D93715E9196900AF4AFF /* Classes */,
@@ -266,8 +263,6 @@
 		15C7D94015E9196900AF4AFF /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				15CEB41415E9295300EE4814 /* PGSQLitePlugin.h */,
-				15CEB41515E9295300EE4814 /* PGSQLitePlugin.m */,
 				15C7D95115E924A600AF4AFF /* PGSQLitePlugin.h */,
 				15C7D95215E924A600AF4AFF /* PGSQLitePlugin.m */,
 				15C7D94115E9196900AF4AFF /* README */,
@@ -345,7 +340,7 @@
 				15C7D93415E9196900AF4AFF /* Capture.bundle in Resources */,
 				15C7D93615E9196900AF4AFF /* Cordova.plist in Resources */,
 				15C7D93F15E9196900AF4AFF /* MainViewController.xib in Resources */,
-				15CEB41315E9290400EE4814 /* www in Resources */,
+				15CEB41815E92A3200EE4814 /* www in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +371,6 @@
 				15C7D93A15E9196900AF4AFF /* AppDelegate.m in Sources */,
 				15C7D93D15E9196900AF4AFF /* MainViewController.m in Sources */,
 				15C7D95315E924A600AF4AFF /* PGSQLitePlugin.m in Sources */,
-				15CEB41615E9295300EE4814 /* PGSQLitePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
