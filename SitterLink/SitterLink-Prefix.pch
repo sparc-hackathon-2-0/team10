@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'SitterLink' target in the 'SitterLink' project
+//
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+#endif
