@@ -92,6 +92,11 @@ h3 {
 
 
 /* ----------------------------------------------------------------------------- LOGIN ----------------- */
+.registerDiv label {
+	color: #fff !important;
+	text-shadow: 1px 1px 0 #444 !important;	
+}
+
 .registerDiv .ui-checkbox-on .ui-icon, .registerDiv .ui-radio-on .ui-icon {
 	background: #ffa144;	
 }
@@ -99,15 +104,15 @@ h3 {
 .registerDiv .ui-submit {
 	margin-top: 20px;	
 	text-transform: uppercase;
-	color: #fff !important;
-	text-shadow: 1px 1px 0 #777;
+	color: #e07306 !important;
+	text-shadow: 1px 1px 0 #fff;
 	box-shadow: none;
-	background: -moz-linear-gradient(top,  #cecece 0%, #afafaf 100%); /* FF3.6+ */
-	background: -webkit-linear-gradient(top,  #cecece 0%,#afafaf 100%); /* Chrome10+,Safari5.1+ */
+	background: -moz-linear-gradient(top,  #f2f2f2 0%, #dddddd 100%); /* FF3.6+ */
+	background: -webkit-linear-gradient(top,  #f2f2f2 0%,#dddddd 100%); /* Chrome10+,Safari5.1+ */
 }
 
 .registerDiv .ui-btn-down-c, .registerDiv .ui-btn-active {
-	background: #afafaf;
+	background: #ddd;
 }
 
 
@@ -145,8 +150,7 @@ h3 {
 
 .btnHeader {
 	display: inline-block;
-	text-indent: -9999px;
-	overflow: hidden;	
+	text-indent: -9999px;	
 	height: 25px;
 	line-height: 25px;
 	min-width: 25px;
@@ -164,6 +168,27 @@ h3 {
 #btnHeaderMessages {
 	background: url(../images/iconMessages.png) 50% 50% no-repeat;
 	width: 32px;
+	position: relative;
+	text-decoration: none !important;
+}
+
+#btnHeaderMessages .badge {
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	background: red;
+	display: inline-block;
+	padding: 3px;
+	border-radius: 9px;
+	height: 12px;
+	line-height: 12px;	
+	color: #fff;
+	font-weight: bold;
+	text-indent: 0;
+	font-size: 11px;
+	text-shadow: none;
+	text-decoration: none !important;
+	text-align: center;
 }
 
 #btnHeaderProfile {
@@ -251,7 +276,7 @@ a.btnGo {
 .profileTop {
 	background: #eaeaea;	
 	padding: 15px;
-	margin: 15px 0 0;
+	margin: 5px 0 0;
 	line-height: 16px;
 }
 
@@ -265,7 +290,7 @@ a.btnGo {
 	border: 5px solid #fff;
 	box-shadow: 0 0 3px #aaa;
 	float: left;
-	margin: -30px 15px 0 -15px;	
+	margin: -30px 15px 0 -25px;	
 }
 
 .profileTop h1 {
