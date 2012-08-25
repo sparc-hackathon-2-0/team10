@@ -5,10 +5,14 @@ $(window).load(function() {
 $(window).ready(function() {
 	$("#profileReadReview").click(function() {
 		$('.profileReviewListing').fadeIn();
-		$('.profileReviewForm').fadeOut();
+		$('.profileReviewForm').hide();
+		$('#profileReadReview').addClass('profileReviewToggleActive');
+		$('#profileLeaveReview').removeClass('profileReviewToggleActive');
 	});
 	$("#profileLeaveReview").click(function() {
-		$('.profileReviewListing').fadeOut();
+		$('.profileReviewListing').hide();
 		$('.profileReviewForm').fadeIn();
+		$('#profileReadReview').removeClass('profileReviewToggleActive');
+		$('#profileLeaveReview').addClass('profileReviewToggleActive');
 	});
 });

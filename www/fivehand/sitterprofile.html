@@ -15,7 +15,7 @@
 
 <div data-role="page">
 
-	<div data-role="header">
+	<div data-role="header" data-position="fixed">
 		
 		<div class="leftCol">
 			<a href="javascript:history.back();" class="btnHeader" id="btnHeaderBack">Back</a>
@@ -30,6 +30,8 @@
 		
 		<div class="clearer">
 		</div>
+		
+		<img src="images/headerLogo.png" class="headerLogo" />
 		
 	</div><!-- /header -->
 
@@ -71,11 +73,11 @@
 		
 			<a href="" class="profileReviewToggle" id="profileReadReview">Read Reviews</a>
 			<a href="" class="profileReviewToggle" id="profileLeaveReview">Leave a Review</a>
+			<div class="clearer">
+			</div>
 		
 			<div class="profileReviewListing">
 			
-				<h2>Reviews</h2>
-				
 				<div class="profileReviewContent">
 					<h3>Review Title</h3>
 					<div class="reviewRating">
@@ -149,7 +151,61 @@
 			</div><!-- /profileReviewListing -->
 			
 			<div class="profileReviewForm">
-				Review Form
+				
+				<form>
+					<fieldset data-role="controlgroup" data-mini="true">
+						<input type="radio" name="radio-mini" id="rateStar1" value="One-Star" />
+						<label for="rateStar1" class="rateStarLabel">
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+						</label>
+					
+						<input type="radio" name="radio-mini" id="rateStar2" value="Two-Star" />
+						<label for="rateStar2" class="rateStarLabel">
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+						</label>
+						
+						<input type="radio" name="radio-mini" id="rateStar3" value="Three-Star" />
+						<label for="rateStar3" class="rateStarLabel">
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+						</label>
+						
+						<input type="radio" name="radio-mini" id="rateStar4" value="Four-Star" />
+						<label for="rateStar4" class="rateStarLabel">
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOff.png" class="rateStar" />
+						</label>
+						
+						<input type="radio" name="radio-mini" id="rateStar5" value="Five-Star" />
+						<label for="rateStar5" class="rateStarLabel">
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+							<img src="images/rateStarOn.png" class="rateStar" />
+						</label>
+					</fieldset>
+					
+					<div data-role="fieldcontain">
+						<label for="comments" class="reviewCommentLabel">Comments:</label>
+						<textarea name="comments" id="comments" class="reviewCommentInput"></textarea>
+					</div>
+				</form>
+				
 			</div><!-- /profileReviewForm -->
 			
 			<div class="clearer">
