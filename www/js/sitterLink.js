@@ -55,8 +55,12 @@ $('#page-register').live('pageshow', function() {
 	});
 });
 
+$('#page-messages').live('pageshow', function() {
+
+});
+
 $('#page-profile-edit').live('pageshow', function() {
-	$('#dbg').html(sessionStorage.getItem('userid') + "<a href='search-families.html'>families</a><a href='search-sitters.html'>sitters</a>");
+	//$('#dbg').html(sessionStorage.getItem('userid') + "<a href='search-families.html'>families</a><a href='search-sitters.html'>sitters</a>");
 });
 
 $('#page-sitter-search').live('pageshow', function() {
