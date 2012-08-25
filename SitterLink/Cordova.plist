@@ -28,8 +28,6 @@
     </array>
 	<key>Plugins</key>
 	<dict>
-		<key>PGSQLitePlugin</key>
-		<string>PGSQLitePlugin</string>
 		<key>Logger</key>
 		<string>CDVLogger</string>
 		<key>Compass</key>

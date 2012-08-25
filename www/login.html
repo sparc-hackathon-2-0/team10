@@ -6,9 +6,8 @@
  	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
 	<meta charset="utf-8">
 
-
 	<link rel="stylesheet" href="css/jquery.mobile-1.1.1.min.css" />
-	<link rel="stylesheet" href="css/sitterLink.css" />	
+	<link rel="stylesheet" href="css/sitterLink.css" />		
 	
 	<!-- TODO: determine why and what
 	<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="iphone.css" type="text/css" />		
@@ -17,6 +16,7 @@
 	<script type="text/javascript" charset="utf-8" src="js/cordova-1.9.0.js"></script>
 
 	<script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="js/jquery.jsonp-2.4.0.min.js"></script>
 	<script type="text/javascript" src="js/jquery.mobile-1.1.1.min.js"></script>
     <script type="text/javascript" src="js/sitterlink.js"></script>
 
@@ -31,32 +31,32 @@
 		}
     </script>
   </head>
-  <body>
-  	<div id="page-sitter-search" data-role="page">
+  <body class="indexBg">
+  	<div id="page-register" data-role="page">
 
-		<div data-role="header" data-position="fixed">
-			<div class="leftCol">
-				<a href="javascript:history.back();" class="btnHeader" id="btnHeaderBack">Back</a>
-			</div>
-			
-			<div class="rightCol">
-			
-				<a href="messages.html" class="btnHeader" id="btnHeaderMessages">Messages<span class="badge"></span></a>
-				<a href="profile-edit.html" class="btnHeader" id="btnHeaderProfile">Profile</a>
-			
-			</div>
-			
-			<div class="clearer">
-			</div>
-			
-			<img src="images/headerLogo.png" class="headerLogo" />
-		</div><!-- /header -->
+		
+		<div data-role="content">
 
-		<div data-role="content">	
-			
-	        <ul class="previewList sitterResults">
+			<div class="formErrors">
+			</div>
 
-	        </ul>
+			<div class="registerDiv">	
+			
+				<form id="formRegister">
+				
+					<label for="email">Email:</label>
+		    		<input type="email" name="email" id="email" value=""  />
+					
+					<label for="password">Password:</label>
+		    		<input type="password" name="password" id="password" value=""  />
+					
+					<label for="password_confirm">Confirm Password:</label>
+		    		<input type="password" name="password_confirm" id="password_confirm" value=""  />
+					
+					<input type="submit" value="Register" />
+				
+				</form>
+			</div>
 	        
 		</div><!-- /content -->
 

@@ -2,6 +2,20 @@ var db = null;
 
 // Page Events
 
+$('#user-type-select').live('pageshow', function() {
+	if(sessionStorage.getItem('auth') == 1)
+	{
+		if(utype == 'F')
+		{
+			$.mobile.changePage("search-families.html");
+		}
+		else
+		{
+			$.mobile.changePage("search-sitters.html")
+		}
+	}
+});
+
 $('#page-register').live('pageshow', function() {
 	$('#formRegister').submit(function() {
 
@@ -334,7 +348,7 @@ function wsGetSittersProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote"></p>');
 
 				$('.profileBio').html('<p>' + item.description + '</p>');
 			});
@@ -357,7 +371,7 @@ function wsGetFamilyProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote">' + 'profileQuote' + '</p>');
+				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote"></p>');
 
 				$('.profileBio').html('<p>' + item.description + '</p>');
 			});

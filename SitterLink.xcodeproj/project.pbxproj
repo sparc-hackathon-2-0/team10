@@ -37,9 +37,7 @@
 		15C7D93A15E9196900AF4AFF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D93915E9196900AF4AFF /* AppDelegate.m */; };
 		15C7D93D15E9196900AF4AFF /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 15C7D93C15E9196900AF4AFF /* MainViewController.m */; };
 		15C7D93F15E9196900AF4AFF /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15C7D93E15E9196900AF4AFF /* MainViewController.xib */; };
-		15C7D95515E924ED00AF4AFF /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */; };
 		15CEB41A15E934C300EE4814 /* www in Resources */ = {isa = PBXBuildFile; fileRef = 15CEB41915E934C300EE4814 /* www */; };
-		15CEB42215E9358A00EE4814 /* PGSQLitePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 15CEB42115E9358A00EE4814 /* PGSQLitePlugin.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +80,6 @@
 		15C7D94215E9196900AF4AFF /* verify.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = verify.sh; sourceTree = "<group>"; };
 		15C7D95415E924ED00AF4AFF /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		15CEB41915E934C300EE4814 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = "<group>"; };
-		15CEB42015E9358A00EE4814 /* PGSQLitePlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PGSQLitePlugin.h; sourceTree = "<group>"; };
-		15CEB42115E9358A00EE4814 /* PGSQLitePlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PGSQLitePlugin.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				15C7D95515E924ED00AF4AFF /* libsqlite3.dylib in Frameworks */,
 				15C7D8F215E9196900AF4AFF /* Foundation.framework in Frameworks */,
 				15C7D8F415E9196900AF4AFF /* UIKit.framework in Frameworks */,
 				15C7D8F615E9196900AF4AFF /* CoreGraphics.framework in Frameworks */,
@@ -263,8 +258,6 @@
 		15C7D94015E9196900AF4AFF /* Plugins */ = {
 			isa = PBXGroup;
 			children = (
-				15CEB42015E9358A00EE4814 /* PGSQLitePlugin.h */,
-				15CEB42115E9358A00EE4814 /* PGSQLitePlugin.m */,
 				15C7D94115E9196900AF4AFF /* README */,
 			);
 			name = Plugins;
@@ -370,7 +363,6 @@
 				15C7D91215E9196900AF4AFF /* main.m in Sources */,
 				15C7D93A15E9196900AF4AFF /* AppDelegate.m in Sources */,
 				15C7D93D15E9196900AF4AFF /* MainViewController.m in Sources */,
-				15CEB42215E9358A00EE4814 /* PGSQLitePlugin.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
