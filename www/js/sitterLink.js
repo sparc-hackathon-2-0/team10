@@ -371,8 +371,8 @@ function wsGetMessages()
 			$.each(data, function(i, item) {
 
 				var byline = "";
-				
-				if(item.direction = 1)
+
+				if(item.direction == 1)
 				{
 					byline = "To: " + item.toname;
 				}
@@ -468,7 +468,7 @@ function wsGetFamilyProfile()
 		success: function(data, status)
 		{
 			$.each(data, function(i, item) {
-				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>' + 'location' + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote"></p>');
+				$('.profileTop').html('<img src="images/profileMissing.png" class="profilePic" /><h1>' + item.firstname + '</h1><h2>'  + item.city + ', ' + item.state + '</h2><a href="#reviews"><div class="profileRating">' + getStarRatings(item.rating) + '</div></a><div class="clearer"></div><p class="profileQuote"></p>');
 
 				$('.profileBio').html('<p>' + item.description + '</p>');
 			});
