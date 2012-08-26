@@ -371,6 +371,7 @@ function wsGetMessages()
 			$.each(data, function(i, item) {
 
 				var byline = "";
+				
 				if(item.direction = 1)
 				{
 					byline = "To: " + item.toname;
