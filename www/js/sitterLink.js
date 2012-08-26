@@ -56,11 +56,14 @@ $('#page-register').live('pageshow', function() {
 });
 
 $('#page-messages').live('pageshow', function() {
-
+	resetBgHack();
+	initMessages();
+	getMessages();
 });
 
 $('#page-profile-edit').live('pageshow', function() {
 	//$('#dbg').html(sessionStorage.getItem('userid') + "<a href='search-families.html'>families</a><a href='search-sitters.html'>sitters</a>");
+	initMessages();
 });
 
 $('#page-sitter-search').live('pageshow', function() {
@@ -225,6 +228,11 @@ function populateFamilyProfile()
 	wsGetFamilyProfile();
 }
 
+function getMessages()
+{
+	wsGetMessages();
+}
+
 function populateSitterReviews()
 {
 	wsGetSittersReviews();
@@ -294,6 +302,34 @@ function wsGetMessageCount()
 			var message_count = data.length;
 
 			$('.badge').html(message_count);
+		},
+		error: function(a, textStatus){
+			alert(textStatus);
+		}
+	})
+}
+
+function wsGetMessages()
+{
+	var id = sessionStorage.getItem('userid');
+
+	$.ajax({
+		url: 'http://hackathon.bluekeylabs.com/message.php?profile=' + id,
+		dataType: 'jsonp',
+		jsonp: 'jsoncallback',
+		timeout: 5000,
+		success: function(data, status)
+		{
+			var message_count = data.length;
+
+			$.each(data, function(i, item) {
+				$('.messageResults').append('<li><p>' + item.message + '</p><br />From: ' + item.fromname + '</li>')
+			});
+
+			if(data.length == 0)
+			{
+				$('.messageResults').append('<li><p>No Messages</p></li>');
+			}
 		},
 		error: function(a, textStatus){
 			alert(textStatus);
