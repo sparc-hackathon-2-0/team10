@@ -473,3 +473,50 @@ a.btnGo {
 .editProfileLongText {
 	width: 100% !important;	
 }
+
+
+
+/* ----------------------------------------------------------------------------- MESSAGES ----------------- */
+.messagePreview {
+	line-height: 20px;
+	color: #777;
+	padding: 15px;
+	margin: 0 -15px;
+	border-bottom: 1px dashed #ddd;
+}
+
+.messageLink:nth-child(even) .messagePreview {
+	background: #efefef;	
+}
+
+.messagePreview h2 {
+	margin: 0 0 5px;
+	font-size: 18px;
+	float: left;
+	color: #111;	
+}
+
+.messagePreviewDate {
+	width: 100px;
+	float: right;
+	text-align: right;
+	font-weight: normal;
+	font-size: 16px;
+	color: #999;	
+}
+
+.messagePreview h3 {
+	font-size: 14px;
+	margin: 0;	
+	color: #333;
+}
+
+.messagePreview p {
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;	
+}
+
+a.messageLink {
+	text-decoration: none !important;	
+}
