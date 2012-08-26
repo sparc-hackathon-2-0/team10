@@ -55,6 +55,52 @@ $('#page-register').live('pageshow', function() {
 	});
 });
 
+$('#page-signin').live('pageshow', function() {
+	$('#formSignIn').submit(function() {
+
+		var email = $('#email').val();
+		var pass = $('#password').val();
+
+
+		$.ajax({
+			url: 'http://hackathon.bluekeylabs.com/profile.php',
+			dataType: 'jsonp',
+			jsonp: 'jsoncallback',
+			type: 'POST',
+			data: "email="+$('#email').val()+"&pass="+$('#password').val()+"&auth=1",
+			timeout: 5000,
+			success: function(data, status)
+			{
+				if(data[0].id > -1)
+				{
+					sessionStorage.setItem('auth', 1);
+					sessionStorage.setItem('userid', data[0].id);
+					sessionStorage.setItem('userType', data[0].utype)
+
+					if(data[0].utype == 'F')
+					{
+						$.mobile.changePage("search-families.html");
+					}
+					else
+					{
+						$.mobile.changePage("search-sitters.html")
+					}
+				}
+				else
+				{
+					$('#formErrors').html('Invalid Username/Password');
+				}
+				
+			},
+			error: function(a, textStatus){
+				$('#formErrors').html('Invalid Username/Password');
+			}
+		});
+
+		return false;
+	});
+});
+
 $('#page-messages').live('pageshow', function() {
 	resetBgHack();
 	initMessages();
@@ -323,12 +369,22 @@ function wsGetMessages()
 			var message_count = data.length;
 
 			$.each(data, function(i, item) {
-				$('.messageResults').append('<li><p>' + item.message + '</p><br />From: ' + item.fromname + '</li>')
+
+				var byline = "";
+				if(item.direction = 1)
+				{
+					byline = "To: " + item.toname;
+				}
+				else
+				{
+					byline = "From: " + item.fromname
+				}
+				$('.messagesResults').append('<li><p>' + item.message + '</p><br />' + byline + '</li>')
 			});
 
 			if(data.length == 0)
 			{
-				$('.messageResults').append('<li><p>No Messages</p></li>');
+				$('.messagesResults').append('<li><p>No Messages</p></li>');
 			}
 		},
 		error: function(a, textStatus){
